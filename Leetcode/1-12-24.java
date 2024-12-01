@@ -39,5 +39,6 @@ class Solution {
         } else {
             System.out.println("Error.");
         }
+        sc.close();
     }
 }

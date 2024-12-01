@@ -203,5 +203,7 @@ public class Arrays {
         prefixMaxSubarraySum(numbers);
         System.out.println();
         kadanes(numbers);
+
+        sc.close();
     }
 }

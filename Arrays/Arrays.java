@@ -126,15 +126,15 @@ public class Arrays {
         //int[] arr = new int[1];
         int numbers[]= {1,2,3,4,5};
         // Input
-        Scanner sc = new Scanner(System.in);
-        int[] marks = new int[3]; 
+        // Scanner sc = new Scanner(System.in);
+        // int[] marks = new int[3]; 
         
-        for (int i = 0; i < marks.length; i++) {
-            System.out.print("Enter marks: ");
-            marks[i] = sc.nextInt();
-        }
+        // for (int i = 0; i < marks.length; i++) {
+        //     System.out.print("Enter marks: ");
+        //     marks[i] = sc.nextInt();
+        // }
         
-        System.out.println("Length of the array: " + marks.length); // Print length of array
+        // System.out.println("Length of the array: " + marks.length); // Print length of array
 
         // Array passed as parameter in the function
         // System.out.print("Enter the key to linear search (on marks[]): "); 

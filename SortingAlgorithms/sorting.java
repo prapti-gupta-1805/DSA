@@ -60,11 +60,47 @@ public class sorting {
         //syntax: Arrays.sort(arr); or Arrays.sort(arr,si,ei(not included))
     //reverse order (works on Objects not int)
         //Arrays.sort(arr, 0, arr.length, Collections.reverseOrder());
+
+//counting sort
+    //O(max(n,range))
+    public static void countingSort(int[] numbers) {
+        if (numbers.length == 0) {
+            return;
+        }
+
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int num : numbers) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        int[] freq = new int[max - min + 1];
+        for (int num : numbers) {
+            freq[num - min]++;
+        }
+    
+        int index = 0;
+        for (int i = 0; i < freq.length; i++) {
+            while (freq[i] > 0) {
+                numbers[index++] = i + min;
+                freq[i]--;
+            }
+        }
+
+        printArr(numbers);
+    }
+
     public static void main(String[] args) {
         int[] arr= {3,5,1,2,4};
         //bubbleSort(arr);
         //selectionSort(arr);
         //insertionSort(arr);
-        Arrays.sort(arr,0,arr.length); printArr(arr);
+        //Arrays.sort(arr,0,arr.length); printArr(arr);
+        countingSort(arr);
         }
 }

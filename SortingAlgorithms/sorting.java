@@ -55,19 +55,16 @@ public class sorting {
         printArr(numbers);
     }
     
-
+//inbuilt sort
+    //0(n logn)
+        //syntax: Arrays.sort(arr); or Arrays.sort(arr,si,ei(not included))
+    //reverse order (works on Objects not int)
+        //Arrays.sort(arr, 0, arr.length, Collections.reverseOrder());
     public static void main(String[] args) {
         int[] arr= {3,5,1,2,4};
         //bubbleSort(arr);
         //selectionSort(arr);
         //insertionSort(arr);
-//inbuilt sort
-    //0(n logn)
-    //syntax: Arrays.sort(arr); or Arrays.sort(arr,si,ei(not included))
-        Arrays.sort(arr,0,arr.length);
-        printArr(arr);
-    //reverse order
-        Arrays.sort(arr, 0, arr.length, Collections.reverseOrder());
-        printArr(arr);
-    }
+        Arrays.sort(arr,0,arr.length); printArr(arr);
+        }
 }

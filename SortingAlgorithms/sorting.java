@@ -70,18 +70,19 @@ public class sorting {
 
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-        for (int num : numbers) {
-            if (num < min) {
-                min = num;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
             }
-            if (num > max) {
-                max = num;
+            if (numbers[i] > max) {
+                max = numbers[i];
             }
         }
 
         int[] freq = new int[max - min + 1];
-        for (int num : numbers) {
-            freq[num - min]++;
+        for (int i = 0; i < numbers.length; i++) {
+            freq[numbers[i] - min]++;
+
         }
     
         int index = 0;
@@ -100,7 +101,7 @@ public class sorting {
         //bubbleSort(arr);
         //selectionSort(arr);
         //insertionSort(arr);
-        //Arrays.sort(arr,0,arr.length); printArr(arr);
+        Arrays.sort(arr,0,arr.length); printArr(arr);
         countingSort(arr);
         }
 }

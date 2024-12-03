@@ -1,4 +1,4 @@
-import java.util.*;
+//import java.util.*;
 public class TwoDArrays {
    public static void spiral(int matrix[][]) {
       /* for a matrix:
@@ -45,7 +45,6 @@ public class TwoDArrays {
       }
       System.out.println("Diagonal sum:  " + sum);
    }
-
    
    public static boolean staircaseSearch(int matrix[][], int key) {
       int row = 0, col = matrix[0].length-1;

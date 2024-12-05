@@ -37,7 +37,6 @@ public class OOPS {
         myAcc.setUsername("PraptiGupta");
         myAcc.setPassword("abcd"); // Password set securely
         System.out.println("Bank Username: " + myAcc.getUsername());
-        // Note: Password won't be printed for security reasons.
 
         // Pencil Example
         Pencil p2 = new Pencil();

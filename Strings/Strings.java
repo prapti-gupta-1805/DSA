@@ -49,7 +49,9 @@ public class Strings {
     }
     public static void main(String[] args) {
         // String str1 = "abcd";
-        // String str2 = new String("abcd");
+        // String str2 = "abcd";
+        // String str3 = new String("abcd");
+        // str1 and str2 point to same string, but str3 points to separate string
 
         // Scanner sc = new Scanner(System.in);
         // String name;
@@ -88,6 +90,42 @@ public class Strings {
         else {
             System.out.println("Strings are not equal");
         }
-        
+
+        //substring
+        System.out.println(s1.substring(0,3)); //si to ei-1
+
+        //compareTo - case sensitive
+        //compareToIgnoreCase - case insensitive
+        String fruits[] = {"apple" , "Banana", "banana" };
+        String largest = fruits[0];
+        int n = fruits.length;
+        for (int i = 0; i < n; i++) {
+           if (largest.compareTo(fruits[i]) < 0) {
+                largest = fruits[i];
+           }
         }
+        String Largest = fruits[0];
+        for (int i = 0; i < n; i++) {
+            if (Largest.compareToIgnoreCase(fruits[i]) < 0) {
+                 Largest = fruits[i];
+            }
+         }
+         System.out.println(largest);
+         System.out.println(Largest);
+
+         //StringBuilder is a mutable version of String
+         StringBuilder sb = new StringBuilder("");
+         for (char ch = 'a'; ch <= 'z'; ch++) {
+            sb.append(ch);
+         }
+         System.out.println(sb);
+
+        //toUpperCase
+        char Char = 'a'; 
+
+        char upperCaseChar = Character.toUpperCase(Char);
+ 
+        System.out.println("Original char: " + Char);
+        System.out.println("Uppercase char: " + upperCaseChar);
     }
+}

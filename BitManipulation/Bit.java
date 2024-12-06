@@ -1,3 +1,5 @@
+package BitManipulation;
+
 /*
 0 = 000
 1 = 001
@@ -42,8 +44,7 @@ Example: 5 >> 1 → 0101 >> 1 → 0010 (Result: 2)
 
 a number n can be represented in max [log(n){base 2} + 1] bits
 */
-
-public class bitwise {
+public class Bit {
     // Function to check if a number is odd or even
     public static void oddOrEven(int n) {
         int bitmask = 1;

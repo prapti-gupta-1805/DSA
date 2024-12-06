@@ -75,7 +75,6 @@ class BankAccount {
 }
 
 /* 
-ENCAPSULATION:
-defined as the wrapping up of data & methods under a single unit. It also implements ata hiding.
-
+<-- ENCAPSULATION -->
+Encapsulation is defined as the wrapping up of data (attributes) & methods (functions) under a single unit. It also implements data hiding (using access modifiers).
  */

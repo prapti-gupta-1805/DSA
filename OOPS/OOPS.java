@@ -88,8 +88,8 @@ public class OOPS {
         S1.schoolName = "Ahlcon Public School";
         System.out.println(S2.schoolName);
 
-            }
-        }
+    }
+}
 
         
 /* 
@@ -282,6 +282,8 @@ class Chicken extends Animal3 {
 
 class Horse extends Animal3 {
     Horse() {
+        super.colour = "black"; //super keyword
+        System.out.println();
         System.out.println("Horse constructor called");
     }
     void walk() {
@@ -342,3 +344,6 @@ class Student1 {
     
     static String schoolName;
 }
+
+//super keyword - accesses parent class's properties, functions && constructor
+//in Horse class

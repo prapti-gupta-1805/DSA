@@ -67,14 +67,27 @@ public class OOPS {
         a.eats();
         deer b = new deer();
         b.eats();
+
+        //Animal3 a = new Animal3(); - will throw error as Animal3 is an abstract class
+        Horse h = new Horse();
+        Chicken c = new Chicken();
+        h.walk();
+        c.walk();
+
+        System.out.println(h.colour);
+        h.changeColour();
+        System.out.println(h.colour);
+
+        Mustang mustang = new Mustang();
             }
         }
 
+        
 /* 
 <-- ENCAPSULATION -->
 Encapsulation is defined as the wrapping up of data (attributes) & methods (functions) under a single unit. It also implements data hiding (using access modifiers).
  */
-  
+
         class Pen {
             String Color;
             int Tip;
@@ -218,5 +231,59 @@ class Animal2 {
 class deer extends Animal2 {
     void eats() {
         System.out.println("herbivore");
+    }
+}
+
+/*
+<--PACKAGES-->
+Package is a group of similar types of classes, interfaces, and sub-packages.
+
+in-built package: eg. java.util.*
+user defined package: 
+ */
+
+/*
+<-- ABSTRACTION -->
+Hiding all the unnecessary details and showing only the important parts to the user.
+Abstract classes:
+    - can't create intance
+    - can have abstract/non-abstract functions
+    - can have a constructor
+Interfaces:
+*/
+
+abstract class Animal3 {
+    String colour;
+    abstract void walk();
+    Animal3() {
+        System.out.println("animal constructor called");
+        colour = "brown";
+    }
+}
+
+class Chicken extends Animal3 {
+    void walk() {
+        System.out.println("walks on two legs");
+    }
+    void changeColour() {
+        colour = "yellow";
+    }
+}
+
+class Horse extends Animal3 {
+    Horse() {
+        System.out.println("Horse constructor called");
+    }
+    void walk() {
+        System.out.println("walks on four legs");
+    }
+    void changeColour() {
+        colour = "dark brown";
+    }
+}
+
+class Mustang extends Horse {
+    Mustang() {
+        System.out.println("Mustang instructor called");
     }
 }

@@ -78,7 +78,16 @@ public class OOPS {
         h.changeColour();
         System.out.println(h.colour);
 
-        Mustang mustang = new Mustang();
+        Mustang mustang = new Mustang(); //to understand the heirarchy in which constructors are called
+
+        Queen q = new Queen();
+        q.moves();
+
+        Student1 S1 = new Student1();
+        Student1 S2 = new Student1();
+        S1.schoolName = "Ahlcon Public School";
+        System.out.println(S2.schoolName);
+
             }
         }
 
@@ -172,6 +181,7 @@ single level inheritance: base -> derived
 multi level inheritance: base -> derived --> derived
 heirarchial inheritance: multiple derived classes of same base class
 hybrid inheritance: more than one type of inheritance is combined within the same class heirarchy
+multiple inheritance: using interfacing
 */
 
 //base class
@@ -282,8 +292,53 @@ class Horse extends Animal3 {
     }
 }
 
-class Mustang extends Horse {
+class Mustang extends Horse {  //to understand the heirarchy in which constructors are called
     Mustang() {
-        System.out.println("Mustang instructor called");
+        System.out.println("Mustang constructor called");
     }
+}
+/*
+Interfaces - blueprint of a class
+eg. blueprint of a generic car (interface) -> blueprint of a Maruti 800 (class) -> Maruti 800 car (object)
+
+uses:
+ - multiple inheritance
+ - total astraction
+
+- All methods are public, abstract & without implementation
+- Used to achieve total abstraction
+- Variables in the interface are final, public, and static
+ */
+
+interface ChessPlayer {
+    void moves();
+}
+
+class Queen implements ChessPlayer {
+    public void moves() {
+        System.out.println("all directions");
+    }
+}
+class Rook implements ChessPlayer {
+    public void moves() {
+        System.out.println("W A S D");
+    }
+}
+class King implements ChessPlayer {
+    public void moves() {
+        System.out.println("all directions by 1 step");
+    }
+}
+
+//syntax for multiple interfaces
+//class Bear implements Herbivore,Carnivore {
+//}
+
+//static keyword - use to share same variable/method of a given class
+
+class Student1 {
+    String name;
+    int roll;
+    
+    static String schoolName;
 }

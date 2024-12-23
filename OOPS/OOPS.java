@@ -26,6 +26,7 @@ Shallow and deep copy:
 - deep copy: changes don't copy
 */
 public class OOPS {
+    @SuppressWarnings("static-access")
     public static void main(String[] args) {
         // Pen Example
         Pen p1 = new Pen(); //Pen() is a constructor

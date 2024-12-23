@@ -1,4 +1,4 @@
-package timeAndSpaceComplexity;
+package TimeAndSpaceComplexity;
 public class timeAndSpaceComplexity {
 /*Time Complexity:
 Time complexity measures the amount of time an algorithm takes to run as a function of the input size. It's typically expressed in terms of the big O notation (O(f(n))).

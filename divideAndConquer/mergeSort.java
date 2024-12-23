@@ -1,4 +1,4 @@
-package divideAndConquer;
+package DivideAndConquer;
 
 public class mergeSort {
     public static void printArr(int arr[]) {

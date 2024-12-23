@@ -1,4 +1,4 @@
-package divideAndConquer;
+package DivideAndConquer;
 
 public class quickSort {
     public static void printArr(int arr[]) {

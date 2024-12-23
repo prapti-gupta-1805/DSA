@@ -51,7 +51,7 @@ public class OOPS {
                 s1.marks[1] = 100;
                 s1.marks[2] = 89;
         
-                Student s2 = new Student(s1); //copies all info of s1 into s2
+                //Student s2 = new Student(s1); //copies all info of s1 into s2
         
         //Animal, Mammal, Dog
         Dog bruno = new Dog();
@@ -78,7 +78,7 @@ public class OOPS {
         h.changeColour();
         System.out.println(h.colour);
 
-        Mustang mustang = new Mustang(); //to understand the heirarchy in which constructors are called
+        //Mustang mustang = new Mustang(); //to understand the heirarchy in which constructors are called
 
         Queen q = new Queen();
         q.moves();

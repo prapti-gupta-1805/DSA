@@ -1,4 +1,5 @@
 #include <stdio.h> //prepocessor directive
+#include <string.h>
 
 //Functions 
     //function definition
@@ -205,13 +206,42 @@ int main() {
     //character array terminated by \0
     //size taken by string = number of characters + 1
     char name[] = {'P','R','A','P','T','I','\0'};
-    char Name[] = "PRAPTI";
+    char Name[] = "PANKAJ";
+    char NAME[50];
+    scanf("%s",&NAME); //cannot input multi word strings with spaces
 
     int ch=0;
     while(Name[ch]!='\0') {
-        printf("%c",Name[ch]);
+        printf("%c\n",Name[ch]);
         ch++;
     }
+
+    printf("%s\n",name);
     
+
+    char str[50];
+    gets(str); //replacement for scanf but outdated
+    puts(str); //replacement for printf
+
+    char STR[50];
+    fgets(str,10,stdin);
+    fputs(str,stdout);
+
+    //string defined by *str notation is mutable
+    //string defined by str[] notation is immutable
+
+    int length = strlen(name);
+    printf("%d",length);
+
+    char str1[]="Hello";
+    char str2[]="World";
+    strcpy(str1,str2);
+    puts(str2);
+
+    strcat(str1,str2);
+    puts(str1);
+
+    int A = strcmp(str1,str2); //returns 0 for equal, +ive for 1>2, -ive for 2>1
+    printf("%d",A);
     return 0;
-}
+} 

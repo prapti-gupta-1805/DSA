@@ -1,3 +1,21 @@
+/*
+Unit I
+Introduction to Programming: Computer system, components of a computer system, computing environments, computer languages, creating and running programs, Preprocessor, Compilation process, role of linker, idea of invocation andexecution of a programme. Algorithms: Representation using flowcharts, pseudocode.
+Introduction to C language: History of C, basic structure of C programs, process of compiling and running a C program, C tokens, keywords, identifiers, constants, strings, special symbols, variables, data types, I/O statements. Interconversion of variables.
+Operators and expressions: Operators, arithmetic, relational and logical, assignment operators, increment and decrement operators, bitwise and conditional operators, special operators, operator precedence and associativity, evaluation of expressions, type conversions in expressions.
+Unit II
+Control structures: Decision statements; if and switch statement; Loop control statements: while, for and do while loops, jump statements, break, continue, goto statements.
+Arrays: Concepts, One dimensional array, declaration and initialization of one dimensional arrays, two dimensional arrays, initialization and accessing, multi dimensional arrays.
+Functions: User defined and built-in Functions, storage classes, Parameter passing in functions, call by value, Passing arrays to functions: idea of call by reference, Recursion.
+Strings: Arrays of characters, variable length character strings, inputting character strings, character library functions, string handling functions.
+Unit III
+Pointers: Pointer basics, pointer arithmetic, pointers to pointers, generic pointers, array of pointers, functions returning pointers, Dynamic memory allocation. Pointers to functions. Pointers and Strings
+Structures and unions: Structure definition, initialization, accessing structures, nested structures, arrays of structures, structures and functions, self referential structures, unions, typedef, enumerations. File handling: command line arguments, File modes, basic file operations read, write and append.Scope and life of variables, multi-file programming.
+C99 extensions. 'C' Standard Libraries: stdio.h, stdlib.h, assert.h, math.h, time.h, ctype.h, setjmp.h, string.h, stdarg.h, unistd.h
+Unit IV
+Basic Algorithms: Finding Factorial, Fibonacci series, Searching, Basic Sorting Algorithms- Bubble sort, Insertion sort and Selection sort. Find the square root of a number, array order reversal, reversal of a string, two-way merge sort, stacks, queues, single-link linked list, Binary search tree.
+
+*/
 #include <stdio.h> //prepocessor directive
 #include <string.h>
 
@@ -230,6 +248,7 @@ int main() {
     //string defined by *str notation is mutable
     //string defined by str[] notation is immutable
 
+    //library functions
     int length = strlen(name);
     printf("%d",length);
 
@@ -241,7 +260,46 @@ int main() {
     strcat(str1,str2);
     puts(str1);
 
-    int A = strcmp(str1,str2); //returns 0 for equal, +ive for 1>2, -ive for 2>1
+    int A = strcmp(str1,str2);
+    //returns 0 for equal, +ive for 1>2, -ive for 2>1
     printf("%d",A);
+    
+//Structures
+    struct student {
+        char name[100];
+        int roll;
+        float cgpa;
+    };
+
+
+
+    struct student s1;
+    s1.roll = 502;
+    s1.cgpa = 9.0;
+    //s1.name = "Prapti"; not correct way
+    strcpy(s1.name,"Prapti");
+
+    printf("%s %d %f", s1.name, s1.roll,s1.cgpa);
+
+    struct student s2 = {"Anshika",22,8.5};
+
+    //Array of structures
+    struct student IT[1];
+    strcpy(IT[0].name,"Rudra");
+
+    //pointer to structure
+    struct student *sptr = &s1;
+    printf("strudent roll = %d\n", (*sptr).roll);
+    printf("strudent roll = %d\n", sptr->roll);
+
+    //typedef keyword
+    typedef struct ComputerEngineeringStudent {
+        int roll;
+    } coe;
+
+    coe s1;
+    s1.roll = 1;
+
+//File handling
     return 0;
 } 

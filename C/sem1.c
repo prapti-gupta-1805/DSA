@@ -1,21 +1,3 @@
-/*
-Unit I
-Introduction to Programming: Computer system, components of a computer system, computing environments, computer languages, creating and running programs, Preprocessor, Compilation process, role of linker, idea of invocation andexecution of a programme. Algorithms: Representation using flowcharts, pseudocode.
-Introduction to C language: History of C, basic structure of C programs, process of compiling and running a C program, C tokens, keywords, identifiers, constants, strings, special symbols, variables, data types, I/O statements. Interconversion of variables.
-Operators and expressions: Operators, arithmetic, relational and logical, assignment operators, increment and decrement operators, bitwise and conditional operators, special operators, operator precedence and associativity, evaluation of expressions, type conversions in expressions.
-Unit II
-Control structures: Decision statements; if and switch statement; Loop control statements: while, for and do while loops, jump statements, break, continue, goto statements.
-Arrays: Concepts, One dimensional array, declaration and initialization of one dimensional arrays, two dimensional arrays, initialization and accessing, multi dimensional arrays.
-Functions: User defined and built-in Functions, storage classes, Parameter passing in functions, call by value, Passing arrays to functions: idea of call by reference, Recursion.
-Strings: Arrays of characters, variable length character strings, inputting character strings, character library functions, string handling functions.
-Unit III
-Pointers: Pointer basics, pointer arithmetic, pointers to pointers, generic pointers, array of pointers, functions returning pointers, Dynamic memory allocation. Pointers to functions. Pointers and Strings
-Structures and unions: Structure definition, initialization, accessing structures, nested structures, arrays of structures, structures and functions, self referential structures, unions, typedef, enumerations. File handling: command line arguments, File modes, basic file operations read, write and append.Scope and life of variables, multi-file programming.
-C99 extensions. 'C' Standard Libraries: stdio.h, stdlib.h, assert.h, math.h, time.h, ctype.h, setjmp.h, string.h, stdarg.h, unistd.h
-Unit IV
-Basic Algorithms: Finding Factorial, Fibonacci series, Searching, Basic Sorting Algorithms- Bubble sort, Insertion sort and Selection sort. Find the square root of a number, array order reversal, reversal of a string, two-way merge sort, stacks, queues, single-link linked list, Binary search tree.
-
-*/
 #include <stdio.h> //prepocessor directive
 #include <string.h>
 
@@ -51,7 +33,53 @@ void printArray(int Marks[], int n) {
     }
 }
 
-int main() {
+
+void fibonacci_iterative(int n) {
+    int a = 0, b = 1, next;
+
+    printf("Fibonacci Series (Iterative): ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    printf("\n");
+}
+
+void fibonacci_recursive(int end) {
+    static int a = 0, b = 1, count = 0; // Static variables to maintain state across recursive calls
+
+    if (count >= end) {
+        return; // Base case: stop when the desired number of terms is reached
+    }
+
+    printf("%d ", a);
+    int next = a + b;
+    a = b;
+    b = next;
+    count++;
+    fibonacci_recursive(end); // Recursive call
+}
+
+int factorial_recursive(int n) {
+    if (n <= 1) {
+        return 1; // Base case: factorial of 0 or 1 is 1
+    }
+    return n * factorial_recursive(n - 1); // Recursive call
+}
+
+int factorial_iterative(int n) {
+    int result = 1;
+
+    for (int i = 1; i <= n; i++) {
+        result *= i; // Multiply result with current number
+    }
+
+    return result;
+}
+
+int main(int argc, char const *argv[]) {
 //output
     printf("hello world!\n");
     int Age = 22;
@@ -74,22 +102,10 @@ int main() {
     int x = 4*3/6*2;
     printf("%d \n", x);
 
-/*  arithmetic operators: +,-,/,*,%
-    relational: <,>,<=,>=,==,!=
-    logical: &&,||,!
-    bitwise
-    asignment: =,+=,-=,*=,%=
-    ternary
-    
-    operator precedence:
-    !
-    *,/,%
-    +,-
-    <,>,<=,>=
-    ==,!=
-    &&
-    ||
-    =
+/*  // Operators: arithmetic (+, -, *, /, %), relational (<, >, <=, >=, ==, !=), logical (&&, ||, !), assignment (=, +=, -=, *=, %=), bitwise, and conditional operators.
+
+    // Operator precedence:
+    // ! > *, /, % > +, - > <, >, <=, >= > ==, != > && > || > =
     
     for same precedence go left to right */
 
@@ -159,6 +175,26 @@ int main() {
 //loop control statement
     //break -> exit loop
     //continue -> skip to next iteration
+    //goto
+
+        int n = -1;
+    if(n<0) {
+        goto label1;
+    } else if (n==0) {
+        goto label2;
+    } else {
+        goto label3;
+    }
+    
+    label1:
+        printf("negative");
+        return 0;
+    label2:
+        printf("zero");
+        return 0;
+    label3:
+        printf("positive");
+        return 0;
 
     //function call
     printHello();
@@ -271,8 +307,6 @@ int main() {
         float cgpa;
     };
 
-
-
     struct student s1;
     s1.roll = 502;
     s1.cgpa = 9.0;
@@ -300,6 +334,193 @@ int main() {
     coe s1;
     s1.roll = 1;
 
+//Unions
+    union employee {
+        char name[10];
+        int id;
+    };
+    union employee e1;
+    strcpy(e1.name,"Prapti");
+    e1.id = 502;
+    
+    printf("%s",e1.name);
+
 //File handling
+    FILE *fptr;  // File pointer declaration
+    char ch;
+
+    // Opening the file in write mode ("w")
+    // If the file doesn't exist, it will be created. If it exists, it will be overwritten.
+    fptr = fopen("test.txt", "w");
+
+    // Check if the file exists
+    if (fptr == NULL) {
+        printf("Error opening file for writing.\n");
+        return 1;  // Exit if file opening fails
+    } else {
+        fptr = fopen("test.txt", "w");
+    }
+
+    // Writing data to the file using fputc() function
+    fputc('H', fptr);
+    fputc('e', fptr);
+    fputc('l', fptr);
+    fputc('l', fptr);
+    fputc('o', fptr);
+
+    // Close the file after writing
+    fclose(fptr);
+
+    // Opening the file in read mode ("r")
+    // The file must exist to be opened in this mode.
+    fptr = fopen("test.txt", "r");
+
+    // Reading data from the file using fgetc() function
+    printf("Reading from file: \n");
+    while ((ch = fgetc(fptr)) != EOF) {  // Loop until end of file is reached
+        printf("%c", ch); // Print each character
+    }
+
+    // Close the file after reading
+    fclose(fptr);
+
+    // Modes Explanation:
+        // "w" - Write mode. If the file exists, it is overwritten. If it does not exist, a new file is created.
+        // "r" - Read mode. The file must already exist, and it is opened for reading only.
+        // "a" - Append mode. Data is written to the end of the file. If the file does not exist, a new one is created.
+        // "rb" - read for binary
+        // "wb" - Write for binary
+        // "a" - Append for binary
+
+    //storage classes
+    //storage class defines scope, default initial value and lifetime of a variable
+    //automatic (default): local to function body, random value, till end of func block
+    //external: global to the program they are defined in, 0, throughout lifetime of program
+        //extern variable - to inform compiler that a given variable is defined somewhere else
+    //static: local to func body, 0, throughout lifetime of program
+    //register: local to func body, 0, till end of func block
+        //stored in CPU register instead of memory
+
+    //command line arguments   
+    printf("%d",argc); //argc number of arguments
+    printf("%s",argv[0]); //argv is array of strings containing arguments entered in command line
+    
+
+    //dynamic memory allocation
+
+    ptr = (int *) malloc(5*sizeof(int));
+    ptr = (int *) calloc(5,sizeof(int)); //initializes all to 0
+    free(ptr);
+    ptr = realloc(ptr,8); //here 8 is the new size to be allocated
+
+    //some questions
+        //fibonacci
+    
+    int end;
+    printf("Enter the number of terms: ");
+    scanf("%d", &end);
+
+    printf("Fibonacci Series: ");
+    fibonacci_recursive(end);
+    fibonacci_iterative(end);
+    printf("\n");
+
+    //factorial
+    int num;
+    printf("Enter a number to calculate its factorial: ");
+    scanf("%d", &num);
+
+    printf("Factorial of %d is %d\n", num, factorial_recursive(num));
+    printf("Factorial of %d is %d\n", num, factorial_iterative(num));
+
+    //armstrong number
+    int num, original, remainder, count = 0, sum = 0;
+
+    printf("Enter a number to check if it is an Armstrong number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    int temp = num;
+    while (temp != 0) {
+        count++;
+        temp /= 10;
+    }
+
+    temp = num;
+    while (temp != 0) {
+        remainder = temp % 10;
+        sum += pow(remainder, count);
+        temp /= 10;
+    }
+
+    if (sum == original) {
+        printf("%d is an Armstrong number.\n", num);
+    } else {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+
+    //linear search
+    int n, key, found = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the element to search: ");
+    scanf("%d", &key);
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            printf("Element %d found at position %d (index %d).\n", key, i + 1, i);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Element %d not found in the array.\n", key);
+    }
+
+    //binary search
+    int n, key, low, high, mid, found = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter the sorted elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the element to search: ");
+    scanf("%d", &key);
+
+    low = 0;
+    high = n - 1;
+
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (arr[mid] == key) {
+            printf("Element %d found at position %d (index %d).\n", key, mid + 1, mid);
+            found = 1;
+            break;
+        } else if (arr[mid] < key) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    if (!found) {
+        printf("Element %d not found in the array.\n", key);
+    }
+
     return 0;
 } 

@@ -10,6 +10,7 @@ void printHello() {
 int sum(int a,int b){
     return a+b;
 }
+
     //recursive funtion
 void PrintHello(int a) {
     //base case
@@ -33,10 +34,8 @@ void printArray(int Marks[], int n) {
     }
 }
 
-
 void fibonacci_iterative(int n) {
     int a = 0, b = 1, next;
-
     printf("Fibonacci Series (Iterative): ");
     for (int i = 0; i < n; i++) {
         printf("%d ", a);
@@ -49,11 +48,9 @@ void fibonacci_iterative(int n) {
 
 void fibonacci_recursive(int end) {
     int a = 0, b = 1, count = 0;
-
     if (count >= end) {
         return; // Base case: stop when the desired number of terms is reached
     }
-
     printf("%d ", a);
     int next = a + b;
     a = b;
@@ -71,17 +68,14 @@ int factorial_recursive(int n) {
 
 int factorial_iterative(int n) {
     int result = 1;
-
     for (int i = 1; i <= n; i++) {
         result *= i; // Multiply result with current number
     }
-
     return result;
 }
 
 int main(int argc, char const *argv[]) {
 //output
-    printf("hello world!\n");
     int Age = 22;
     printf("age is %d \n", Age);
     //%d - int
@@ -102,10 +96,12 @@ int main(int argc, char const *argv[]) {
     int x = 4*3/6*2;
     printf("%d \n", x);
 
-/*  // Operators: arithmetic (+, -, *, /, %), relational (<, >, <=, >=, ==, !=), logical (&&, ||, !), assignment (=, +=, -=, *=, %=), bitwise, and conditional operators.
+/*
+Operators:
+    arithmetic (+, -, *, /, %), relational (<, >, <=, >=, ==, !=), logical (&&, ||, !), assignment (=, +=, -=, *=, %=), bitwise, and conditional operators.
 
-    // Operator precedence:
-    // ! > *, /, % > +, - > <, >, <=, >= > ==, != > && > || > =
+    Operator precedence:
+    ! > *, /, % > +, - > <, >, <=, >= > ==, != > && > || > =
     
     for same precedence go left to right */
 
@@ -172,11 +168,10 @@ int main(int argc, char const *argv[]) {
     do {printf("%d %d %d\n",j,j,j);
         j++;} while(j<=3);
 
-//loop control statement
     //break -> exit loop
     //continue -> skip to next iteration
+    
     //goto
-
         int n = -1;
     if(n<0) {
         goto label1;
@@ -196,7 +191,7 @@ int main(int argc, char const *argv[]) {
         printf("positive");
         return 0;
 
-    //function call
+//Functions
     printHello();
         printf("Sum = %d\n", sum(num1,num2));
 
@@ -346,7 +341,7 @@ int main(int argc, char const *argv[]) {
     printf("%s",e1.name);
 
 //File handling
-    FILE *fptr;  // File pointer declaration
+    FILE *fptr;  // File pointer
     char ch;
 
     // Opening the file in write mode ("w")
@@ -381,146 +376,144 @@ int main(int argc, char const *argv[]) {
         printf("%c", ch); // Print each character
     }
 
-    // Close the file after reading
+    // Close the file
     fclose(fptr);
 
-    // Modes Explanation:
-        // "w" - Write mode. If the file exists, it is overwritten. If it does not exist, a new file is created.
-        // "r" - Read mode. The file must already exist, and it is opened for reading only.
-        // "a" - Append mode. Data is written to the end of the file. If the file does not exist, a new one is created.
-        // "rb" - read for binary
-        // "wb" - Write for binary
-        // "a" - Append for binary
+    // "w" - Write mode. If the file exists, it is overwritten. If it does not exist, a new file is created.
+    // "r" - Read mode. The file must already exist, and it is opened for reading only.
+    // "a" - Append mode. Data is written to the end of the file. If the file does not exist, a new one is created.
+    // "rb" - read for binary
+    // "wb" - Write for binary
+    // "a" - Append for binary
 
     //storage classes
-    //storage class defines scope, default initial value and lifetime of a variable
-    //automatic (default): local to function body, random value, till end of func block
-    //external: global to the program they are defined in, 0, throughout lifetime of program
-        //extern variable - to inform compiler that a given variable is defined somewhere else
-    //static: local to func body, 0, throughout lifetime of program
-    //register: local to func body, 0, till end of func block
-        //stored in CPU register instead of memory
+        //storage class defines scope, default initial value and lifetime of a variable
+        //automatic (default): local to function body, random value, till end of func block
+        //external: global to the program they are defined in, 0, throughout lifetime of program
+            //extern variable - to inform compiler that a given variable is defined somewhere else
+        //static: local to func body, 0, throughout lifetime of program
+        //register: local to func body, 0, till end of func block
+            //stored in CPU register instead of memory
 
     //command line arguments   
-    printf("%d",argc); //argc number of arguments
-    printf("%s",argv[0]); //argv is array of strings containing arguments entered in command line
+        printf("%d",argc); //argc number of arguments
+        printf("%s",argv[0]); //argv is array of strings containing arguments entered in command line
     
 
     //dynamic memory allocation
+        ptr = (int *) malloc(5*sizeof(int));
+        ptr = (int *) calloc(5,sizeof(int)); //initializes all to 0
+        free(ptr);
+        ptr = realloc(ptr,8); //here 8 is the new size to be allocated
 
-    ptr = (int *) malloc(5*sizeof(int));
-    ptr = (int *) calloc(5,sizeof(int)); //initializes all to 0
-    free(ptr);
-    ptr = realloc(ptr,8); //here 8 is the new size to be allocated
-
-    //some questions
+    //classical codes
         //fibonacci
     
-    int end;
-    printf("Enter the number of terms: ");
-    scanf("%d", &end);
-
-    printf("Fibonacci Series: ");
-    fibonacci_recursive(end);
-    fibonacci_iterative(end);
-    printf("\n");
-
-    //factorial
-    int num;
-    printf("Enter a number to calculate its factorial: ");
-    scanf("%d", &num);
-
-    printf("Factorial of %d is %d\n", num, factorial_recursive(num));
-    printf("Factorial of %d is %d\n", num, factorial_iterative(num));
-
-    //armstrong number
-    int num, original, remainder, count = 0, sum = 0;
-
-    printf("Enter a number to check if it is an Armstrong number: ");
-    scanf("%d", &num);
-
-    original = num;
-
-    int temp = num;
-    while (temp != 0) {
-        count++;
-        temp /= 10;
-    }
-
-    temp = num;
-    while (temp != 0) {
-        remainder = temp % 10;
-        sum += pow(remainder, count);
-        temp /= 10;
-    }
-
-    if (sum == original) {
-        printf("%d is an Armstrong number.\n", num);
-    } else {
-        printf("%d is not an Armstrong number.\n", num);
-    }
-
-    //linear search
-    int n, key, found = 0;
-
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-
-    int arr[n];
-    printf("Enter the elements of the array:\n");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    printf("Enter the element to search: ");
-    scanf("%d", &key);
-
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == key) {
-            printf("Element %d found at position %d (index %d).\n", key, i + 1, i);
-            found = 1;
-            break;
-        }
-    }
-
-    if (!found) {
-        printf("Element %d not found in the array.\n", key);
-    }
-
-    //binary search
-    int n, key, low, high, mid, found = 0;
-
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-
-    int arr[n];
-    printf("Enter the sorted elements of the array:\n");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    printf("Enter the element to search: ");
-    scanf("%d", &key);
-
-    low = 0;
-    high = n - 1;
-
-    while (low <= high) {
-        mid = (low + high) / 2;
-        if (arr[mid] == key) {
-            printf("Element %d found at position %d (index %d).\n", key, mid + 1, mid);
-            found = 1;
-            break;
-        } else if (arr[mid] < key) {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    if (!found) {
-        printf("Element %d not found in the array.\n", key);
-    }
+            int end;
+            printf("Enter the number of terms: ");
+            scanf("%d", &end);
+        
+            printf("Fibonacci Series: ");
+            fibonacci_recursive(end);
+            fibonacci_iterative(end);
+            printf("\n");
+        
+            //factorial
+            int num;
+            printf("Enter a number to calculate its factorial: ");
+            scanf("%d", &num);
+        
+            printf("Factorial of %d is %d\n", num, factorial_recursive(num));
+            printf("Factorial of %d is %d\n", num, factorial_iterative(num));
+        
+            //armstrong number
+            int num, original, remainder, count = 0, sum = 0;
+        
+            printf("Enter a number to check if it is an Armstrong number: ");
+            scanf("%d", &num);
+        
+            original = num;
+        
+            int temp = num;
+            while (temp != 0) {
+                count++;
+                temp /= 10;
+            }
+        
+            temp = num;
+            while (temp != 0) {
+                remainder = temp % 10;
+                sum += pow(remainder, count);
+                temp /= 10;
+            }
+        
+            if (sum == original) {
+                printf("%d is an Armstrong number.\n", num);
+            } else {
+                printf("%d is not an Armstrong number.\n", num);
+            }
+        
+            //linear search
+            int n, key, found = 0;
+        
+            printf("Enter the number of elements: ");
+            scanf("%d", &n);
+        
+            int arr[n];
+            printf("Enter the elements of the array:\n");
+            for (int i = 0; i < n; i++) {
+                scanf("%d", &arr[i]);
+            }
+        
+            printf("Enter the element to search: ");
+            scanf("%d", &key);
+        
+            for (int i = 0; i < n; i++) {
+                if (arr[i] == key) {
+                    printf("Element %d found at position %d (index %d).\n", key, i + 1, i);
+                    found = 1;
+                    break;
+                }
+            }
+        
+            if (!found) {
+                printf("Element %d not found in the array.\n", key);
+            }
+        
+            //binary search
+            int n, key, low, high, mid, found = 0;
+        
+            printf("Enter the number of elements: ");
+            scanf("%d", &n);
+        
+            int arr[n];
+            printf("Enter the sorted elements of the array:\n");
+            for (int i = 0; i < n; i++) {
+                scanf("%d", &arr[i]);
+            }
+        
+            printf("Enter the element to search: ");
+            scanf("%d", &key);
+        
+            low = 0;
+            high = n - 1;
+        
+            while (low <= high) {
+                mid = (low + high) / 2;
+                if (arr[mid] == key) {
+                    printf("Element %d found at position %d (index %d).\n", key, mid + 1, mid);
+                    found = 1;
+                    break;
+                } else if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        
+            if (!found) {
+                printf("Element %d not found in the array.\n", key);
+            }
 
     return 0;
-} 
+}

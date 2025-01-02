@@ -48,7 +48,7 @@ void fibonacci_iterative(int n) {
 }
 
 void fibonacci_recursive(int end) {
-    static int a = 0, b = 1, count = 0; // Static variables to maintain state across recursive calls
+    int a = 0, b = 1, count = 0;
 
     if (count >= end) {
         return; // Base case: stop when the desired number of terms is reached

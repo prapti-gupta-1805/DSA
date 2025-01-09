@@ -1,4 +1,4 @@
-package BitManipulation;
+package 05_BitManipulation;
 
 /*
 0 = 000

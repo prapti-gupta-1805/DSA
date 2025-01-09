@@ -1,4 +1,4 @@
-package Strings;
+package 04_Strings;
 
 //IMMUTABLE data type
 public class Strings {

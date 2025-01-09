@@ -25,6 +25,7 @@ Shallow and deep copy:
 - shallow copy: changes copy
 - deep copy: changes don't copy
 */
+package 06_OOPS;
 public class OOPS {
     @SuppressWarnings("static-access")
     public static void main(String[] args) {

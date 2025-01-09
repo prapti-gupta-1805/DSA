@@ -1,4 +1,4 @@
-package Recursion;
+package 07_Recursion;
 
 public class Recursion {
     public static void printDec(int n) {

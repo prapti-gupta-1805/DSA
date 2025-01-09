@@ -1,4 +1,5 @@
 //import java.util.*;
+package 03_TwoDArrays;
 public class TwoDArrays {
    public static void spiral(int matrix[][]) {
       /* for a matrix:

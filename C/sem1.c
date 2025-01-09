@@ -1,5 +1,7 @@
 #include <stdio.h> //prepocessor directive
 #include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 //Functions 
     //function definition
@@ -12,14 +14,14 @@ int sum(int a,int b){
 }
 
     //recursive funtion
-void PrintHello(int a) {
+void PrintHelloRecursive(int a) {
     //base case
     if(a==0) {
         return;
     }
     //work to be done
     printf("Hello word\n");
-    PrintHello(a-1);
+    PrintHelloRecursive(a-1);
 }
 
 void square(int* ptr) {
@@ -200,7 +202,7 @@ Operators:
 
 
 //recursion
-    PrintHello(3);
+    PrintHelloRecursive(3);
 
 //pointer - variable that stores the memory address of another variable
     int age = 22;

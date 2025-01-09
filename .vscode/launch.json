@@ -3,13 +3,13 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Strings",
+      "name": "Run Java Strings",
       "request": "launch",
       "mainClass": "Strings.Strings",
       "projectName": "DSA-Notes_b6af7ca5"
     },
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "Run C/C++ Debug",
       "type": "cppdbg",
       "request": "launch",
       "args": [],

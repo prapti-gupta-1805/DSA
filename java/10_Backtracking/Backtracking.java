@@ -17,7 +17,7 @@ public class Backtracking {
         }
         //recursion
         arr[i] = val;
-        changeAree(arr, i+1,val+1);
+        changeArr(arr, i+1,val+1);
         arr[i] -= 2;
     }
 

@@ -1,4 +1,3 @@
-package SortingAlgorithms;
 import java.util.*;
 public class sorting {
     public static void printArr(int[] numbers) {

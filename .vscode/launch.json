@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "OneDArrays",
+      "request": "launch",
+      "mainClass": "OneDArrays",
+      "projectName": "DSA-Notes_4b0922df"
+    },
+    {
+      "type": "java",
       "name": "Run Java Strings",
       "request": "launch",
       "mainClass": "Strings.Strings",

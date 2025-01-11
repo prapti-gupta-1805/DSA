@@ -1,5 +1,3 @@
-package 07_Recursion;
-
 public class Recursion {
     public static void printDec(int n) {
         if(n == 1) {

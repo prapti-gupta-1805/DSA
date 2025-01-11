@@ -1,5 +1,3 @@
-package 05_BitManipulation;
-
 /*
 0 = 000
 1 = 001

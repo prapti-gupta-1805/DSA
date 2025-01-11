@@ -1,5 +1,3 @@
-package 08_DivideAndConquer;
-
 public class DivideAndConquer{
 
     // Utility method to print arrays

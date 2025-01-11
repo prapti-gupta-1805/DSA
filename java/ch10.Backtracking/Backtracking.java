@@ -1,5 +1,3 @@
-package 10_Backtracking;
-
 public class Backtracking {
 
     public static void printArr(int arr[]) {

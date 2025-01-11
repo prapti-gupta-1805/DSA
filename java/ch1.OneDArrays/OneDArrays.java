@@ -15,7 +15,7 @@ This file covers basic operations on an array:
 
 import java.util.*;
 
-package 01_OneDArrays;
+package ch1.OneDArrays;
 public class OneDArrays {
     // Linear search method
     public static void linearSearch(int numbers[], int key) {

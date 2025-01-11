@@ -1,6 +1,7 @@
 package 10_Backtracking;
 
 public class Backtracking {
+
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -9,42 +10,60 @@ public class Backtracking {
     }
 
     public static void changeArr(int arr[], int i, int val) {
-        //base case
+        // Base case
         if (i == arr.length) {
             printArr(arr);
             return;
         }
-        //recursion
+        // Recursion
         arr[i] = val;
-        changeArr(arr, i+1,val+1); //fn call
-        arr[i] -= 2; //backtracking step
+        changeArr(arr, i + 1, val + 1); // Function call
+        arr[i] -= 2; // Backtracking step
     }
 
     public static void findSubsets(String str, String s, int i) {
-        //base case
-        if(i == str.length()) {
+        // Base case
+        if (i == str.length()) {
             if (s.length() == 0) {
                 System.out.println(".");
             } else {
                 System.out.println(s);
             }
-        return;
+            return;
         }
-        //recursion
-        //yes choice
-        findSubsets(str,s+str.charAt(i),i+1);
-        //no choice
-        findSubsets(str,s,i+1);
+        // Recursion
+        // Yes choice
+        findSubsets(str, s + str.charAt(i), i + 1);
+        // No choice
+        findSubsets(str, s, i + 1);
     }
 
-    
-    public static void main(String args[]) {
-        int arr[]= new int[5];
+    public static void findPermutation(String str, String s) {
+        // Base case
+        if (str.length() == 0) {
+            System.out.println(s);
+            return;
+        }
+        // Recursion
+        for (int i = 0; i < str.length(); i++) {
+            char curr = str.charAt(i);
+            String newStr = str.substring(0, i) + str.substring(i + 1);
+            findPermutation(newStr, s + curr);
+        }
+    }
 
-        //simple depiction of backtracking
+    public static void main(String args[]) {
+        int arr[] = new int[5];
+
+        // Simple depiction of backtracking
         changeArr(arr, 0, 1);
         printArr(arr);
+
         String str = "abc";
-        findSubsets(str,"",0);
+        System.out.println("Subsets of \"" + str + "\":");
+        findSubsets(str, "", 0);
+
+        System.out.println("Permutations of \"" + str + "\":");
+        findPermutation(str, "");
     }
 }

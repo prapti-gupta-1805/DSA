@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Backtracking",
+      "request": "launch",
+      "mainClass": "Backtracking",
+      "projectName": "DSA-Notes_4b0922df"
+    },
+    {
+      "type": "java",
       "name": "OneDArrays",
       "request": "launch",
       "mainClass": "OneDArrays",

@@ -1,5 +1,4 @@
 public class Backtracking {
-
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -50,6 +49,7 @@ public class Backtracking {
         }
     }
 
+    //time complexity: O(n!)
     public static void nQueens(char board[][], int row) {
         if(row == board.length){
             printBoard(board);
@@ -57,11 +57,34 @@ public class Backtracking {
         }
         
         for(int j=0;j<board.length;j++) {
+            if(isSafe(board,row,j)){
             board[row][j] = 'Q';
             nQueens(board,row+1);
-            board[row][j] = '.'; //backtracking step
+            board[row][j] = 'x'; //backtracking step
+            }
         }
     }
+
+    public static boolean isSafe(char board[][], int row, int col){
+        int i,j;
+        for(i=row-1;i>=0;i--) {
+            if(board[i][col] == 'Q') {
+                return false;
+            }
+        }
+        for(i=row-1,j=col-1; i>=0 && j>=0;i--,j--) {
+            if(board[i][j] == 'Q') {
+                return false;
+            }
+        }
+        for (i = row - 1, j = col + 1; i >= 0 && j < board.length; i--, j++) {
+            if (board[i][j] == 'Q') {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void printBoard(char board[][]) {
         System.out.println("----------------");
         int n = board.length;
@@ -72,8 +95,25 @@ public class Backtracking {
             System.out.println();
         }
     }
+
+    public static int gridWays(int i, int j, int n, int m) {
+        //Base case
+        if (i == n-1 && j == m-1) {
+            return 1;
+        }
+        //Corner case
+        if (i >= n || j >= m) {
+            return 0;
+        }
+    
+        int w1 = gridWays(i + 1, j, n, m);
+        int w2 = gridWays(i, j + 1, n, m);
+
+        return w1 + w2;
+    }
+
     public static void main(String args[]) {
-/*
+
         int arr[] = new int[5];
         // Simple depiction of backtracking
         changeArr(arr, 0, 1);
@@ -85,15 +125,16 @@ public class Backtracking {
 
         System.out.println("Permutations of \"" + str + "\":");
         findPermutation(str, "");
-    */
     
-        int n = 2;
+        int n = 4;
         char board[][] = new char[n][n];
         for (int i=0;i<n;i++) {
             for (int j=0;j<n;j++){
-                board[i][j] = '.';
-        nQueens(board,0);
+                board[i][j] = 'x';
             }
         }
+        nQueens(board,0);
+
+        System.out.println(gridWays(0, 0, 3, 3));
     }
 }

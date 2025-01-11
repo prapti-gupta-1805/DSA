@@ -151,9 +151,7 @@ public class OneDArrays {
         System.out.println("Maximum subarray sum (Kadane's algorithm) = " + ms);
     }
 
-
     @SuppressWarnings("ConvertToTryWithResources")
-
     public static void main(String[] args) {
     
         // Array creation

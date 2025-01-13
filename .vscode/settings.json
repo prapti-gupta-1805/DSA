@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "java/ch10.Backtracking",
+        "java/ch08.DivideAndConquer",
+        "java/ch07.Recursion",
+        "java/ch06.OOPS",
+        "java/ch05.BitManipulation",
+        "java/ch04.Strings",
+        "java/ch03.TwoDArrays",
+        "java/ch02.BasicSortingAlgorithms",
+        "java/ch01.OneDArrays",
+        "java/ch11.ArrayLists"
+    ]
+}

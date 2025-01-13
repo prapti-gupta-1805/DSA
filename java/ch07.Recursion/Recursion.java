@@ -45,12 +45,8 @@ public class Recursion {
         if (i == arr.length-1) {
             return true;
         }
-        if (arr[i] <= arr [i+1] && isSorted(arr,i+1) == true) {
-            return true;
-        }
-        else {
-            return false;
-        }
+
+        return arr[i] <= arr [i+1] && isSorted(arr,i+1);
     }
 
     public static void main(String[] args) {

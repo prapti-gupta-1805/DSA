@@ -15,7 +15,7 @@ public class arrayLists {
             list.add(5);
             System.out.println(list);
 
-            list.add(1,9);
+            list.add(1,9); //add element at an index and push the rest forward
 
             //traverse
             int ele = list.get(3); //pass index

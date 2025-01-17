@@ -10,5 +10,6 @@
         "java/ch02.BasicSortingAlgorithms",
         "java/ch01.OneDArrays",
         "java/ch11.ArrayLists"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

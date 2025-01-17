@@ -1,6 +1,8 @@
 import java.util.ArrayList;
     //on sorted array
 public class PairSum {
+
+    //brute force
     public static boolean PairSum1(ArrayList<Integer> list, int target) {
         for (int i = 0; i < list.size(); i++) {
             for (int j = i + 1; j < list.size(); j++) {
@@ -11,25 +13,26 @@ public class PairSum {
         }
         return false;
     }
+    
+    //2 pointer
+    public static boolean PairSum2(ArrayList<Integer> list, int target) {
+        int left = 0;
+        int right = list.size() - 1;
 
-        public static boolean PairSum2(ArrayList<Integer> list, int target) {
-            int left = 0;
-            int right = list.size() - 1;
-    
-            while (left < right) {
-                int sum = list.get(left) + list.get(right);
-    
-                if (sum == target) {
-                    return true;
-                } else if (sum < target) {
-                    left++;
-                } else {
-                    right--;
-                }
+        while (left < right) {
+            int sum = list.get(left) + list.get(right);
+
+            if (sum == target) {
+                return true;
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
             }
-    
-            return false;
         }
+
+        return false;
+    }
 
     public static void main(String[] args) {
     ArrayList<Integer> list = new ArrayList<>();

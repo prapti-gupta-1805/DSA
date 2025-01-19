@@ -40,10 +40,10 @@ public class PairSum {
     int target = 5;
 
     boolean result1 = PairSum1(list, target);
-    System.out.println("Pair with sum " + target + ": " + result1);
+    System.out.println("Pair with sum " + target + " (Brute force): " + result1);
 
     boolean result2 = PairSum2(list, target);
-    System.out.println("Pair with sum " + target + ": " + result2);
+    System.out.println("Pair with sum " + target + " (Two pointer): " + result2);
     }
 }
 

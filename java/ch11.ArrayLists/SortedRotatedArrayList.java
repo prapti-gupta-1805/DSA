@@ -6,33 +6,28 @@ public class SortedRotatedArrayList {
     public static boolean PairSum2(ArrayList<Integer> list, int target) {
         int n = list.size();
         int pivot = -1;
-        int Left = 0, Right = list.size() - 1;
-        while (Left <= Right) {
-            int mid = Left + (Right - Left) / 2;
-
-            if (mid < Right && list.get(mid) > list.get(mid + 1)) {
-                pivot = mid;
-            }
-            if (mid > Left && list.get(mid) < list.get(mid - 1)) {
-                 pivot = mid - 1;
-            }
-            if (list.get(Left) <= list.get(mid)) {
-                Left = mid + 1;
-            } else {
-                Right = mid - 1;
-            }
+        int Left = 0, Right = n - 1;
+        for (int i = 0; i < n-1; i++) {
+           if(list.get(i) > list.get(i+1)) {
+            pivot = i;
+            break;
+           }
+            
         }
         
-        int left = (pivot + 1) % n;
+        int left = (pivot + 1);
         int right = pivot;
 
         while (left != right) {
+            //case 1
             int sum = list.get(left) + list.get(right);
             if (sum == target) {
                 return true;
             }
+            //case 2
             if (sum < target) {
                 left = (left + 1) % n;
+            //case 3
             } else {
                 right = (right - 1 + n) % n;
             }

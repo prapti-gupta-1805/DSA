@@ -6,8 +6,7 @@ public class SortedRotatedArrayList {
     public static boolean PairSum2(ArrayList<Integer> list, int target) {
         int n = list.size();
         int pivot = -1;
-        int Left = 0, Right = n - 1;
-        for (int i = 0; i < n-1; i++) {
+                                                                                                                                                                                                                                           for (int i = 0; i < n-1; i++) {
            if(list.get(i) > list.get(i+1)) {
             pivot = i;
             break;

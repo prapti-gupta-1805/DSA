@@ -9,7 +9,9 @@
         "java/ch03.TwoDArrays",
         "java/ch02.BasicSortingAlgorithms",
         "java/ch01.OneDArrays",
-        "java/ch11.ArrayLists"
+        "java/ch11.ArrayLists",
+        "java/ch12.LinkedLists"
     ],
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.referencedLibraries": []
 }

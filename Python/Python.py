@@ -38,3 +38,21 @@ print(name.title()) #title case
 
 first, last = name.split(" ") #split a multi word string around the space
 print(first + " | " + last)
+
+#calculator
+x = float(input("enter first number: "))
+y = float(input("enter second number: "))
+print("Addition:", (x+y))
+print("Subtraction:", (x-y))
+print("Multiplication:", (x*y))
+print("Division:", (x/y))
+
+# ** for exponent, % for modulo
+
+z= round(x+y)
+#rounding
+print(z,2) #round(number, number of digits)
+print(f"{z:.2f}")
+
+#to add commas to numbers (1000000 -> 1,000,000)
+print(f"{z:,}")

@@ -8,30 +8,32 @@ line
 comment
 '''
 
+
+print("a") #end = '\n' by default
 print("a", end = "") #puts nothing at EOL instead of newline
-print("a") #end = '\n' by 
-a = input("What is your name?  ")
+a = input("What is your name?  ") #taking input
 print("Hello " + a + "!!")
+
+print("Hello" ,a, "!!") #sep = " " by default
 print("Hello" ,a, "!!", sep = "") #puts no space between two values
-print("Hello" ,a, "!!") #adds space by default
 print(f"Hello {a}")
 
 
-#to print quotes
-#print("Hello "friend"") - won't work
+#to print quotes within quotes
 print('Hello "friend"')
 print("hello \"friend\"")
 
 
 #.strip() function removes whitespaces from string
-name1 = name2 = name3 = "                 PRAPTI                 "
-name4 = "prapti"
+name1 = "                 PRAPTI                 "
+name2 = "prapti"
+ 
+print("/" + name1.lstrip() + "/") #for left spaces
+print("/" + name1.rstrip() + "/") #for right spaces
+print("/" + name1.strip() + "/") #for all spaces
+print(name2.strip('i')) #to remove argument passed
 
-name1 = name1.lstrip() #for left spaces
-print("/" + name1 + "/", sep="")
-name2 = name2.rstrip() #for right spaces
-print("/" + name2 + "/", sep="")
-name3 = name3.strip() #for all spaces
-print("/" + name3 + "/", sep="")
-name4 = name4.strip('i') #to remove argument passed
-print(name4)
+
+name = "prapti gupta"
+print(name.capitalize()) #capitaize first letter
+print(name.title()) #title case

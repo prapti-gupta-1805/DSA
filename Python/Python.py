@@ -1,11 +1,15 @@
+#function definition
+def hello(to):
+    print("Hello " + to + " !!")
+
+
+
 # single line comment
 '''
 multiple
 line
 comment
 '''
-
-
 
 a = input("What is your name?  ") #taking input
 
@@ -25,7 +29,7 @@ print("hello \"friend\"")
 name = "prapti gupta"
 name1 = "                 PRAPTI                 "
 name2 = "prapti"
- 
+
 #.strip() function removes whitespaces from string
 print("/" + name1.strip() + "/") #for all spaces
 print("/" + name1.lstrip() + "/") #for left spaces
@@ -52,7 +56,9 @@ print("Division:", (x/y))
 z= round(x+y)
 #rounding
 print(z,2) #round(number, number of digits)
-print(f"{z:.2f}")
 
 #to add commas to numbers (1000000 -> 1,000,000)
 print(f"{z:,}")
+
+#function call
+hello("Sweetu")

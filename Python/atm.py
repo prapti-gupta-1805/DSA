@@ -45,7 +45,7 @@ conn = mysql.connector.connect(host='localhost', user='root', password='aps12', 
 c1 = conn.cursor()
 
 print("===============================================")
-print(" WELCOME TO OUR ATM ")
+print(" WELCOME TO ATM ")
 print("===============================================")
 print("1. To create account")
 print("2. To login")

@@ -9,5 +9,3 @@ The repository is organized into different sections for better clarity:
 - **Java**: Java-based code and implementations.
 - **C**: Basic C-based code and implementations.
 -  **Python**: Python-based code and implementations.
-
-Each directory will contain code for various algorithms and data structures such as arrays, linked lists, sorting algorithms, dynamic programming, and more.

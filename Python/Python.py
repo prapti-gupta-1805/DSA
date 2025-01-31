@@ -1,5 +1,9 @@
 import math  # Importing the math module
-
+import random
+#or
+#from random import choice
+import statistics
+import sys
 
 def main():
     # Single-line comment
@@ -22,6 +26,9 @@ def main():
     # To print quotes within quotes
     print('Hello "friend"')  # Using single quotes
     print("hello \"friend\"")  # Escaping double quotes with backslash
+
+    #strong concatenation using *
+    print("meow " * 3)
 
     # String manipulation
     name = "prapti gupta"
@@ -64,7 +71,6 @@ def main():
     # Adding commas to numbers
     print(f"{z:,}")  # Output 1,000,000 format
 
-    # Using math module functions
     x = pow(2, 2)  # 2 raised to the power of 2
     y = math.sqrt(x)  # Square root of x
     print(x, y)
@@ -94,7 +100,7 @@ def main():
     #(if x > 0 and x < 10) = (if 10 > x > 0)
 
     # Match Statement
-    name = input("What's your favourite Harry Potter character?")
+    name = input("What's your favourite Harry Potter character?  ")
     
     match name:
         case "Harry" | "Hermione" | "Ron":  # Multiple cases (Harry, Hermione, Ron)
@@ -115,8 +121,83 @@ def main():
         n+=1
 
     #for loop
-    for i in range(0,5,1):
-        print("woof!")
+    for i in range(0,5,1): #range(start,stop,step)
+        print("Woof!")
+
+    #list
+    #mutable
+    students = ["apple","banana","orange"]
+
+    print(students) #print complete list
+
+    print(students[0]) #print each element by index
+    print(students[1])
+    print(students[2])
+
+    for i in students: #print using for loop
+        print(i)
+
+    #len function - works on strings, lists, sets, tuples, dictionaries
+    print(len(students))
+
+    #dictionaries
+    #immutable
+    #exists in key value pairs
+    gender = {"Prapti":"F", "Aditya":"M", "Anshika":"F", "Manik":"M"}
+    print(gender["Aditya"])
+
+    for i in gender:
+        print(i, ": ", gender[i])
+
+    #list of dictionaries
+    students = [
+        {"name":"Hermione", "house": "Gryffindor", "patronus": "Otter"},
+        {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
+        {"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russell terrier"},
+        {"name": "Draco", "house": "Slytherin", "patronus": None} #keyword None shows absence of a value
+    ]
+    #traversing
+    for student in students:
+        print(f"Name: {student['name']}, House: {student['house']}, Patronus: {student['patronus']}")
+
+
+    #exception handling
+    while True:
+        try:
+            x = int(input("what's x? "))
+        except: #or except ValueError
+            print("x is not an integer")
+            #or
+            #pass
+        else:
+            break
+    print(f"x is {x}")
+
+    #random module
+    x = random.choice(["H","T"]) #chooses one
+    print(x)
+    #or if used 'from' to import
+    #x = choice(["H","T"])
+
+    y = random.randint(1,10) #chooses an integer from and including (start,end)
+    print(y)
+
+    list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+    random.shuffle(list) #shuffles a list in place
+    print(list)
+
+    #stats module
+    a = statistics.mean([100,90,80])
+    print(a)
+
+    #sys module
+    try:
+        print("hello, my name is", sys.argv[1]) #argv[0] stores the name of the file
+    except:
+        #print("enter a name")
+        #or
+        sys.exit("enter a name")
+
 
 # Function definition
 def hello(x="world"):  # Default argument 'world'

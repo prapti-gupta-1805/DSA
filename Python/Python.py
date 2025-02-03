@@ -4,15 +4,19 @@ import random
 #from random import choice
 import statistics
 import sys
+import cowsay
+import requests
+import json
 
 def main():
+
     # Single-line comment
     '''
-    Multiple
-    Line
-    Comment
+    multi
+    line
+    comment
     '''
-
+'''
     a = input("What is your name?  ")  # Taking input
 
     print("Hello " + a + "!!")
@@ -196,8 +200,18 @@ def main():
     except:
         #print("enter a name")
         #or
-        sys.exit("enter a name")
+        sys.exit("incorrect input")
 
+    #cowsay package
+    #run 'pip install cowsay' in the terminal first
+    cowsay.cow("Moo!!")
+    cowsay.trex("Rawr!!")
+
+'''
+    #API - application programming interface
+        #pip install requests
+response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
+print(json.dumps(response.json(), indent = 2))
 
 # Function definition
 def hello(x="world"):  # Default argument 'world'

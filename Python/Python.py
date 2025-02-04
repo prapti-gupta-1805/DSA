@@ -1,12 +1,13 @@
-import math  # Importing the math module
-import random
-#or
-#from random import choice
+import math
+import random #or 'from random import choice'
 import statistics
 import sys
-import cowsay
-import requests
 import json
+
+#import cowsay
+#import requests
+
+from sayings import goodbye #importing self made library
 
 def main():
 
@@ -16,7 +17,7 @@ def main():
     line
     comment
     '''
-'''
+
     a = input("What is your name?  ")  # Taking input
 
     print("Hello " + a + "!!")
@@ -204,14 +205,20 @@ def main():
 
     #cowsay package
     #run 'pip install cowsay' in the terminal first
-    cowsay.cow("Moo!!")
-    cowsay.trex("Rawr!!")
+    #cowsay.cow("Moo!!")
+    #cowsay.trex("Rawr!!")
 
-'''
+
     #API - application programming interface
         #pip install requests
-response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
-print(json.dumps(response.json(), indent = 2))
+    '''
+    response = requests.get("https://itunes.apple.com/search?entity=song&limit=50&term=" + sys.argv[1])
+    o = response.json()
+    for result in o["results"]:
+        print(result["trackName"])
+    '''
+    #creating libraries
+    goodbye("prapti")
 
 # Function definition
 def hello(x="world"):  # Default argument 'world'

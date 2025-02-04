@@ -3,8 +3,8 @@ import random #or 'from random import choice'
 import statistics
 import sys
 import json
-import cowsay
-import requests
+import cowsay # type: ignore
+import requests # type: ignore
 from sayings import goodbye #importing self made library
 
 def main():

@@ -214,8 +214,8 @@ def main():
     for result in o["results"]:
         print(result["trackName"])
 
-    #creating libraries
     goodbye("prapti")
+
 
 
 # Function definition
@@ -224,4 +224,4 @@ def hello(x="world"):  # Default argument 'world'
     return y
 
 # Calling the main function
-main()
+main() 

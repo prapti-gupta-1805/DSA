@@ -53,30 +53,29 @@ public class LinkedList {
 
     //add anywhere
     public void add(int index, int data) {
+        //step 1 : create new Node
         Node newNode = new Node(data);
         size++;
 
-        if (head == null) {
-            addFirst(data);
+        //check if LL is empty
+        if(head == null){
+            head = tail = newNode;
             return;
         }
-
+        
         Node temp = head;
-        int i = 0;
-
-        while (i < index - 1 && temp != null) {
+        for(int i = 0; i < index;i++) {
             temp = temp.next;
-            i++;
         }
 
-        newNode.next = temp.next;
+        temp.next = newNode.next;
         temp.next = newNode;
 
-        if (newNode.next == null) {
+        if(newNode.next == null) {
             tail = newNode;
         }
-}
 
+    }
 
     //print an LL
     public void printList(){
@@ -101,8 +100,7 @@ public class LinkedList {
         ll.addFirst(1);
         ll.addLast(4);
         ll.addLast(5);
-
-        ll.add(2,3);
+        //ll.add(2,3);
 
         ll.printList();
         System.out.println(ll.size);

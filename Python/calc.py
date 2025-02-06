@@ -4,6 +4,7 @@ def main ():
     print("The square of the input value is:", square(x))
 
 def square(n):
-    return n*n
+    return n * n
 
-main()
+if __name__ == "__main__":
+    main()

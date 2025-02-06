@@ -1,15 +1,15 @@
 #supplemetary file created to showcase user defined libraries in python
 
 def main():
-    hello("prapti")
-    goodbye("prapti")
+    print(hello("prapti"))
+    print(goodbye("prapti"))
 
 
-def hello(name):
-    print(f"hello, {name}")
+def hello(name="world"):
+    return f"hello, {name}"
 
 def goodbye(name):
-    print(f"goodbye, {name}")
+    return f"goodbye, {name}"
 
 if __name__ == "__main__":
     main()

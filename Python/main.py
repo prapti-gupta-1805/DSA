@@ -214,7 +214,8 @@ def main():
     for result in o["results"]:
         print(result["trackName"])
 
-    goodbye("prapti")
+    x= goodbye("prapti")
+    print(x)
 
 
 

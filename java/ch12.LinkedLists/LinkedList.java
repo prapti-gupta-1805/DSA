@@ -53,28 +53,28 @@ public class LinkedList {
 
     //add anywhere
     public void add(int index, int data) {
-        Node newNode = new Node(data);
-        size++;
+    Node newNode = new Node(data);
+    size++;
 
-        if (head == null) {
-            addFirst(data);
-            return;
-        }
+    if (head == null) {
+        addFirst(data);
+        return;
+    }
 
-        Node temp = head;
-        int i = 0;
+    Node temp = head;
+    int i = 0;
 
-        while (i < index - 1 && temp != null) {
-            temp = temp.next;
-            i++;
-        }
+    while (i < index - 1 && temp != null) {
+        temp = temp.next;
+        i++;
+    }
 
-        newNode.next = temp.next;
-        temp.next = newNode;
+    newNode.next = temp.next;
+    temp.next = newNode;
 
-        if (newNode.next == null) {
-            tail = newNode;
-        }
+    if (newNode.next == null) {
+        tail = newNode;
+    }
 }
 
 

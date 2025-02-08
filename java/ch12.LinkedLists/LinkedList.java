@@ -75,8 +75,14 @@ public class LinkedList {
     if (newNode.next == null) {
         tail = newNode;
     }
-}
+    }
 
+    //remove first
+    public int removeFirst() {
+        int val = head.data;
+        head = head.next;
+        return val;
+    }
 
     //print an LL
     public void printList(){
@@ -89,7 +95,7 @@ public class LinkedList {
             temp = temp.next;
         }
         System.out.println("null");
-    } 
+    }
 
     public static void main(String[] args) {
     //for a single node LL head and tail are the same
@@ -106,5 +112,8 @@ public class LinkedList {
 
         ll.printList();
         System.out.println(ll.size);
+
+        System.out.println(ll.removeFirst());
+        ll.printList();
     }
 }

@@ -11,6 +11,4 @@ def test_square():
         square("cat")
 
 
-#run pytest calc_test.py
-#instead of
-#python calc_test.py
+#run 'pytest calc_test.py' instead of 'python calc_test.py'

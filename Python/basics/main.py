@@ -78,10 +78,16 @@ def main():
     y = math.sqrt(x)  # Square root of x
     print(x, y)
 
-    # Function definition
+    # Function
     a = hello("Sweetu")  # Function call with argument
     b = hello()  # Function call without argument (defaults to "world")
     print(a, b)
+
+    #lambda function
+    #for inline use/to define a temp function/def function in single line
+    sq = lambda x: x ** 2
+    print(sq(4))
+
 
     # Conditional Statements (if, elif, else)
     if (x < y):
@@ -223,6 +229,7 @@ def main():
 def hello(x="world"):  # Default argument 'world'
     y = ("Hello " + x + " !!")
     return y
+
 
 # Calling the main function
 main() 

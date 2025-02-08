@@ -1,3 +1,5 @@
+
+
 public class LinkedList {
     class Node {
         int data;
@@ -6,91 +8,119 @@ public class LinkedList {
         public Node(int data){
             this.data = data;
             this.next = null;
-
         }
     }
 
-    public static Node head;
-    public static Node tail;
-    public static int size;
+    Node head;
+    Node tail;
+    int size;
 
-    public void addFirst(int data) { //O(1)
-        //step 1 : create new Node
+    public LinkedList() {
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
+
+    public void addFirst(int data) { // O(1)
         Node newNode = new Node(data);
         size++;
 
-        //check if LL is empty
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
 
-        //step 2 - newMode next = head
         newNode.next = head;
-
-        //step 3 - head = newNode
         head = newNode;
-
     }
 
-    public void addLast(int data) { //O(1)
-        //step 1 : create new Node
+    public void addLast(int data) { // O(1)
         Node newNode = new Node(data);
         size++;
 
-        //check if LL is empty
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
 
-        //step 2 - tail next = newNode
         tail.next = newNode;
-
-        //step 3 - tail = newNode
         tail = newNode;
     }
 
-    //add anywhere
     public void add(int index, int data) {
-    Node newNode = new Node(data);
-    size++;
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        }
 
-    if (head == null) {
-        addFirst(data);
-        return;
+        if (index == 0) {
+            addFirst(data);
+            return;
+        }
+
+        if (index == size) {
+            addLast(data);
+            return;
+        }
+
+        Node newNode = new Node(data);
+        Node temp = head;
+        int i = 0;
+
+        while (i < index - 1) {
+            temp = temp.next;
+            i++;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+        size++;
     }
 
-    Node temp = head;
-    int i = 0;
-
-    while (i < index - 1 && temp != null) {
-        temp = temp.next;
-        i++;
-    }
-
-    newNode.next = temp.next;
-    temp.next = newNode;
-
-    if (newNode.next == null) {
-        tail = newNode;
-    }
-    }
-
-    //remove first
     public int removeFirst() {
+        if (head == null) {
+            throw new IllegalStateException("Cannot remove from an empty list");
+        }
+
         int val = head.data;
         head = head.next;
+        size--;
+
+        if (head == null) { // If list becomes empty, reset tail
+            tail = null;
+        }
+
         return val;
     }
 
-    //print an LL
-    public void printList(){
+    public int removeLast() {
+        if(size == 0) {
+            System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        } else if(size == 1) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+        Node prev = head;
+        for(int i = 0; i<size-2; i++) {
+            prev = prev.next;
+        }
+        int val = prev.next.data;
+        prev.next = null;
+        tail = prev;
+        size--;
+
+        return val;
+    }
+
+    public void printList() {
         if (head == null) {
             System.out.println("LL is empty");
+            return;
         }
+
         Node temp = head;
-        while(temp != null) {
+        while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
@@ -98,22 +128,23 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-    //for a single node LL head and tail are the same
         LinkedList ll = new LinkedList();
-        //ll.head = ll.new Node(1);
-        //ll.head.next = ll.new Node(2);
 
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(4);
         ll.addLast(5);
-
-        ll.add(2,3);
+        ll.add(2, 3);
 
         ll.printList();
-        System.out.println(ll.size);
+        System.out.println("Size: " + ll.size);
 
-        System.out.println(ll.removeFirst());
+        System.out.println("Removed: " + ll.removeFirst());
         ll.printList();
+        System.out.println("Size: " + ll.size);
+
+        System.out.println("Removed: " + ll.removeLast());
+        ll.printList();
+        System.out.println("Size: " + ll.size);
     }
 }

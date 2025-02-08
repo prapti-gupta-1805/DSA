@@ -6,6 +6,7 @@ import json
 import cowsay # type: ignore
 import requests # type: ignore
 from sayings import goodbye #importing self made library
+import re
 
 def main():
 
@@ -224,7 +225,31 @@ def main():
     print(x)
 
     #regexes
+    
+    # . - any character except newline
+    # * - 0 or more repititions
+    # + - 1 or more repititions
+    # ? - 0 or 1 repitition
+    # {m} - m repitions
+    # {m,n} - m-n repititions
+    # ^ - matches start of string
+    # $ - matches the end of the string just before the newline at the end of the string
+    # [] - set of characters
+    # [^] - complement of set
+    # \w - [a-zA-Z0-9_] (small letters,capital letters,0-9 and _)
+    # \W - opp of \w
+    # \d - decimal digit
+    # \D - not a decimal digit
+    # \s - whitespace characters
+    # \S - not a whitespace character
+    # re.IGNORECASE re.MULTILINE re.DOTALL
+    # re.match re.fullmatch
+    email = input("What's your email? ").strip()
 
+    if re.search(r"^\w+@(\w+\.)?\w+\.(com|co.in)$", email, re.IGNORECASE):
+        print("Valid")
+    else:
+        print("Invalid")
 
 # Function definition
 def hello(x="world"):  # Default argument 'world'

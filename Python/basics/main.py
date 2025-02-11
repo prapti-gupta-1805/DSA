@@ -91,7 +91,6 @@ def main():
     sq = lambda x: x ** 2
     print(sq(4))
 
-
     # Conditional Statements (if, elif, else)
     if (x < y):
         print(y, "is greater than", x)

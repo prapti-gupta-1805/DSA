@@ -8,7 +8,7 @@ import re
 import cowsay
 import requests
 
-import sayings #importing self made library
+import supplementary #importing self made library
 
 def main():
 
@@ -228,7 +228,7 @@ def main():
     for result in o["results"]:
         print(result["trackName"])
 
-    x= sayings.goodbye("prapti")
+    x= supplementary.goodbye("prapti")
     print(x)
 
     #regexes

@@ -1,14 +1,14 @@
 import random
 
 class Hat:
-    def __init__(self):
-        self.houses = ["Gryffindor","Hufflepuff","Ravenclaw","Slytherin"]
+    houses = ["Gryffindor","Hufflepuff","Ravenclaw","Slytherin"]
 
-    def sort(self,name):
-        print(name,"is in",random.choice(self.houses))
+    @classmethod #to use a class method without instantiating it/creating an object
+    def sort(cls,name):
+        print(name,"is in",random.choice(cls.houses))
         
-hat = Hat()
-hat.sort("Harry")
+Hat.sort("Harry")
+
 
 class Student:
     def __init__(self, name, house,patronus):
@@ -18,7 +18,6 @@ class Student:
 
     def __str__(self):
         return f"{self.name} from {self.house} with a patronus of {self.patronus}"
-
 
     #Getter
     @property
@@ -65,6 +64,14 @@ class Student:
                 return "🐶"
             case _:
                 return "🧝🏻‍♀️"
+# Subclass demonstrating inheritance
+class HogwartsStudent(Student):
+    def __init__(self, name, house, patronus, year):
+        super().__init__(name, house, patronus)  # Call the parent constructor
+        self.year = year
+    
+    def __str__(self):
+        return f"{self.name}, a year {self.year} student from {self.house}, with a patronus of {self.patronus}"
 
 def main():
     student = get_student()
@@ -82,8 +89,9 @@ def get_student():
     name = input("name: ")
     house = input("house:  ")
     patronus = input("patronus:  ")
+    year = input("year: ")
 
-    student = Student(name,house,patronus) #constructor call
+    student = HogwartsStudent(name, house, patronus, year)
     return student
 
 if __name__ == "__main__" :

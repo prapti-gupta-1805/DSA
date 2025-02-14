@@ -64,7 +64,8 @@ class Student:
                 return "🐶"
             case _:
                 return "🧝🏻‍♀️"
-# Subclass demonstrating inheritance
+
+#inheritance
 class HogwartsStudent(Student):
     def __init__(self, name, house, patronus, year):
         super().__init__(name, house, patronus)  # Call the parent constructor

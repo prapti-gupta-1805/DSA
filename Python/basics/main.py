@@ -265,8 +265,17 @@ def main():
     url = input("URL: ").rstrip()
     # username = url.replace("https://twitter.com/","")
     username = re.sub(r"^(https?://)?(www\.)?twitter\.com/" , "" , url)
-    print(f"Username; {username}")
-    
+    print(f"Username: {username}")
+
+#set
+#duplicate elements are not allowed
+houses = set()
+houses.add("Gryffindor")
+houses.add("Slytherin")
+houses.add("Hufflepuff")
+houses.add("Ravenclaw")
+houses.add("Gryffindor")
+print(houses)
 
 # Function definition
 def hello(x="world"):  # Default argument 'world'

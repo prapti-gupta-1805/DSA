@@ -138,9 +138,11 @@ public class LinkedList{
         temp = temp.next;
         i++;
     }
-
     return -1;
+    }
 
+    public int recSearch(int key) {
+        
     }
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();

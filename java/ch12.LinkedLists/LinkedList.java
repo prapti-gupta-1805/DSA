@@ -141,9 +141,6 @@ public class LinkedList{
     return -1;
     }
 
-    public int recSearch(int key) {
-        
-    }
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
     

@@ -16,9 +16,9 @@ Getters & Setters:
 creating multiple constructors for same class and calling according to convenience is called 'constructor overloading'
 
 types of constructors:
- - non-parameterized: eg. Student()
- - parameterixed: eg. Student(String name)
- - copy constructor: passing an object as a parameter in a constructor to copy it's properties 
+- non-parameterized: eg. Student()
+- parameterixed: eg. Student(String name)
+- copy constructor: passing an object as a parameter in a constructor to copy it's properties 
     - if you copy value of an Object from a constructor, instead of a copy of the Object being formed, only a new variale is formed that points to the same old Object. (shallow copy)
 
 Shallow and deep copy:
@@ -26,7 +26,6 @@ Shallow and deep copy:
 - deep copy: changes don't copy
 */
 public class OOPS {
-    @SuppressWarnings("static-access")
     public static void main(String[] args) {
         // Pen Example
         Pen p1 = new Pen(); //Pen() is a constructor

@@ -1,18 +1,3 @@
-/*
-This file covers basic operations on an array:
-1. Creation, input, and output of arrays.
-2. Linear search
-3. Finding the smallest and largest numbers
-4. Binary search on a sorted array.
-5. Reversing an array in place.
-6. Generating all possible pairs in an array.
-7. Generating all possible subarrays of an array.
-8. Calculating the maximum subarray sum using three approaches:
-   - Brute force (O(n^3) time complexity)
-   - Prefix sum method (O(n^2) time complexity)
-   - Kadane's Algorithm (O(n) time complexity).
-*/
-
 import java.util.*;
 
 public class OneDArrays {
